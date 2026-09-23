@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hira Pharmacy — Offline Pharmacy Software for Windows</title>
+<meta name="description" content="Billing, stock with expiry alerts, suppliers, cash book and reports in one offline pharmacy app for Windows. Import your stock from Excel and print receipts in one click. Download Hira Pharmacy 2.0.">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="canonical" href="https://marketerwaseem17.github.io/hira-pharmacy-downloads/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hira Pharmacy — Offline Pharmacy Software for Windows">
+<meta property="og:description" content="Billing, expiry alerts, suppliers and reports in one offline pharmacy app. Import your stock from Excel, print receipts in one click.">
+<meta property="og:url" content="https://marketerwaseem17.github.io/hira-pharmacy-downloads/">
+<meta property="og:image" content="https://marketerwaseem17.github.io/hira-pharmacy-downloads/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Hira Pharmacy",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "softwareVersion": "2.0.0",
+  "description": "Offline pharmacy management software: billing, stock and expiry alerts, suppliers, cash book and reports.",
+  "downloadUrl": "https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe",
+  "author": { "@type": "Organization", "name": "Hira Technologies" }
+}
+</script>
+<style>
+  :root {
+    --navy-950: #0a1533;
+    --navy-900: #0f1f4d;
+    --navy-800: #16296b;
+    --navy-600: #1e3a8a;
+    --navy-200: #c9d5f5;
+    --navy-100: #e7ecfb;
+    --navy-50: #f3f6fd;
+    --green-500: #22c55e;
+    --green-400: #4ade80;
+    --green-900: #052e16;
+    --ink: #0f1b3d;
+    --muted: #52607d;
+    --line: #e2e8f5;
+    --bg: #f6f8fc;
+    --card: #ffffff;
+    --radius: 16px;
+    --shadow-lg: 0 34px 70px -28px rgba(10, 21, 51, 0.5);
+    --shadow-md: 0 18px 40px -22px rgba(10, 21, 51, 0.35);
+    --font: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance; }
+  p { margin: 0; }
+  .container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+  .ic { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .ic-fill { fill: currentColor; stroke: none; }
+
+  :focus-visible { outline: 3px solid var(--green-400); outline-offset: 3px; border-radius: 6px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: #fff; color: var(--ink); padding: 8px 14px; border-radius: 8px; z-index: 100; }
+  .skip:focus { left: 8px; }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+    border-radius: 12px; border: 1px solid transparent; padding: 14px 24px; line-height: 1.2;
+    transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--green-500); color: var(--green-900); box-shadow: 0 10px 28px -8px rgba(34, 197, 94, 0.7); }
+  .btn-primary:hover { background: var(--green-400); transform: translateY(-1px); }
+  .btn-ghost { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.28); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.16); }
+  .btn-outline { background: #fff; color: var(--navy-600); border-color: var(--navy-200); }
+  .btn-outline:hover { border-color: var(--navy-600); background: var(--navy-50); }
+  .btn-lg { padding: 17px 30px; font-size: 1.08rem; }
+  .btn-sm { padding: 10px 16px; font-size: .92rem; border-radius: 10px; }
+
+  /* ---------- announcement + nav ---------- */
+  .announce { background: var(--navy-950); color: var(--navy-200); font-size: .92rem; text-align: center; padding: 9px 16px; }
+  .announce a { color: #fff; font-weight: 600; text-underline-offset: 3px; }
+  .announce b { color: var(--green-400); }
+
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(10, 21, 51, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-inner { display: flex; align-items: center; gap: 28px; min-height: 68px; }
+  .brand { white-space: nowrap; display: flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .brand img { width: 34px; height: 34px; border-radius: 9px; background: #fff; padding: 3px; }
+  .nav-links { display: none; gap: 26px; margin-left: 18px; }
+  .nav-links a { color: var(--navy-200); text-decoration: none; font-weight: 600; font-size: .96rem; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+  .nav-inner { gap: 12px; }
+  .nav-cta .btn { padding: 10px 14px; font-size: .92rem; white-space: nowrap; }
+  .nav-cta .btn-ghost { display: none; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    color: #fff; position: relative; overflow: hidden;
+    background:
+      radial-gradient(900px 520px at 88% -8%, rgba(34, 197, 94, 0.16), transparent 60%),
+      radial-gradient(800px 600px at -10% 110%, rgba(59, 100, 220, 0.35), transparent 60%),
+      linear-gradient(165deg, var(--navy-950) 0%, #12266a 58%, var(--navy-600) 100%);
+  }
+  .hero-grid { display: grid; gap: 48px; padding: 56px 0 72px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .84rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green-400); }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: currentColor; border-radius: 2px; }
+  .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); font-weight: 800; margin: 16px 0 20px; }
+  .hero .lede { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: var(--navy-200); max-width: 34em; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 16px; }
+  .fineprint { color: var(--navy-200); font-size: .92rem; }
+  .fineprint strong { color: #fff; font-weight: 600; }
+  .fineprint + .fineprint { margin-top: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 30px; padding: 0; list-style: none; }
+  .chips li { display: flex; align-items: center; gap: 8px; color: #dbe5ff; font-size: .95rem; font-weight: 600; }
+  .chips .ic { color: var(--green-400); }
+  .nonwin-note, .mobile-note { display: none; margin-top: 12px; font-size: .92rem; color: #ffd98a; }
+  html[data-platform="mobile"] .mobile-note { display: block; }
+  html[data-platform="other"] .nonwin-note { display: block; }
+
+  .hero-visual { position: relative; }
+  .frame { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid rgba(15, 31, 77, 0.12); }
+  .frame-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #eef2fb; border-bottom: 1px solid var(--line); font-size: .78rem; color: var(--muted); font-weight: 600; }
+  .frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: #cbd5ea; display: block; }
+  .frame-bar span { margin-left: 8px; }
+  .receipt-float { display: none; position: absolute; right: -12px; bottom: -34px; width: 168px; border-radius: 6px; border: 1px solid var(--line); box-shadow: 0 24px 50px -14px rgba(0, 0, 0, 0.55); transform: rotate(3.5deg); background: #fff; }
+
+  /* ---------- proof strip ---------- */
+  .strip { background: var(--navy-50); border-bottom: 1px solid var(--line); }
+  .strip-inner { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 14px; padding: 26px 0; }
+  .strip-item { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: .96rem; color: var(--navy-800); }
+  .strip-item .ic { width: 1.6em; height: 1.6em; color: var(--navy-600); }
+
+  /* ---------- sections ---------- */
+  section { scroll-margin-top: 84px; }
+  .section { padding: 84px 0; }
+  .section-alt { background: var(--bg); }
+  .section-head { max-width: 40em; margin-bottom: 44px; }
+  .kicker { font-size: .84rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-600); margin-bottom: 12px; }
+  .section-head h2, .split h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 800; }
+  .section-head p { color: var(--muted); font-size: 1.1rem; margin-top: 14px; }
+
+  .grid-3 { display: grid; gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .card .icon-wrap { width: 46px; height: 46px; border-radius: 12px; background: var(--navy-100); color: var(--navy-600); display: grid; place-items: center; margin-bottom: 18px; }
+  .card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); }
+  .badge-new { display: inline-block; vertical-align: middle; margin-left: 8px; font-size: .68rem; font-weight: 800; letter-spacing: .08em; padding: 3px 8px; border-radius: 999px; background: var(--green-500); color: var(--green-900); text-transform: uppercase; }
+
+  /* ---------- tabs ---------- */
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+  .tab { font: inherit; font-weight: 700; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--navy-200); background: #fff; color: var(--navy-800); cursor: pointer; transition: background-color .15s, color .15s, border-color .15s; }
+  .tab:hover { border-color: var(--navy-600); }
+  .tab[aria-selected="true"] { background: var(--navy-600); color: #fff; border-color: var(--navy-600); }
+  .panel[hidden] { display: none; }
+  .panel figcaption { margin-top: 18px; color: var(--muted); font-size: 1.05rem; max-width: 46em; }
+  .panel .frame { box-shadow: var(--shadow-md); }
+
+  /* ---------- split ---------- */
+  .split { display: grid; gap: 48px; align-items: center; }
+  .split p.lead { color: var(--muted); font-size: 1.1rem; margin: 16px 0 24px; }
+  .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .ticks li { display: flex; gap: 12px; align-items: flex-start; }
+  .ticks .ic { color: #16a34a; margin-top: 3px; width: 1.3em; height: 1.3em; stroke-width: 2.4; }
+  .receipt-stage { background: linear-gradient(160deg, var(--navy-100), #dfe7fb); border-radius: 22px; padding: 44px 24px; display: grid; place-items: center; }
+  .receipt-stage img { width: min(300px, 78%); border-radius: 6px; box-shadow: 0 30px 60px -20px rgba(10, 21, 51, 0.5); border: 1px solid var(--line); background: #fff; }
+
+  /* ---------- what's new ---------- */
+  .new-list { display: grid; gap: 14px; margin-top: 8px; }
+  .new-item { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .new-item .ic { color: var(--navy-600); margin-top: 3px; width: 1.4em; height: 1.4em; }
+  .new-item b { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+  .new-item span { color: var(--muted); }
+
+  /* ---------- steps ---------- */
+  .steps { display: grid; gap: 18px; counter-reset: s; }
+  .step { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px 28px; }
+  .step::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--navy-600); color: #fff; font-weight: 800; margin-bottom: 18px; }
+  .step h3 { font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .step p { color: var(--muted); }
+  .steps-cta { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+  /* ---------- faq ---------- */
+  .faq { max-width: 820px; }
+  details { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 22px 0; font-weight: 700; font-size: 1.1rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 1.6rem; line-height: 1; color: var(--navy-600); font-weight: 400; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { color: var(--muted); padding: 0 40px 24px 0; }
+
+  /* ---------- final cta ---------- */
+  .final { color: #fff; text-align: left; background: radial-gradient(700px 400px at 100% 0%, rgba(34,197,94,.18), transparent 60%), linear-gradient(160deg, var(--navy-950), var(--navy-600)); }
+  .final-inner { padding: 76px 0; display: grid; gap: 28px; align-items: center; }
+  .final h2 { font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 800; }
+  .final p { color: var(--navy-200); font-size: 1.12rem; margin-top: 12px; max-width: 34em; }
+
+  footer { background: var(--navy-950); color: var(--navy-200); padding: 40px 0 44px; font-size: .94rem; }
+  .foot { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; }
+  footer a { color: #fff; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ---------- dialog ---------- */
+  dialog { border: 0; border-radius: 20px; padding: 0; width: min(520px, calc(100% - 32px)); box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.6); color: var(--ink); }
+  dialog::backdrop { background: rgba(10, 21, 51, 0.62); backdrop-filter: blur(3px); }
+  .dlg-head { background: linear-gradient(160deg, var(--navy-900), var(--navy-600)); color: #fff; padding: 28px 28px 24px; }
+  .dlg-head .tick { width: 46px; height: 46px; border-radius: 50%; background: var(--green-500); color: var(--green-900); display: grid; place-items: center; margin-bottom: 14px; }
+  .dlg-head .tick .ic { width: 1.5em; height: 1.5em; stroke-width: 2.6; }
+  .dlg-head h2 { font-size: 1.55rem; font-weight: 800; }
+  .dlg-head p { color: var(--navy-200); margin-top: 8px; }
+  .dlg-head p a { color: #fff; font-weight: 600; }
+  .dlg-body { padding: 24px 28px 28px; }
+  .dlg-body ol { margin: 0 0 22px; padding-left: 22px; display: grid; gap: 10px; }
+  .dlg-body li::marker { color: var(--navy-600); font-weight: 800; }
+  .dlg-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* ---------- mobile bar ---------- */
+  .mobile-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: none; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10, 21, 51, 0.96); backdrop-filter: blur(8px); border-top: 1px solid rgba(255,255,255,0.12); }
+  .mobile-bar .btn { width: 100%; }
+  html[data-platform="mobile"] .mobile-bar { display: block; }
+  html[data-platform="mobile"] body { padding-bottom: 76px; }
+
+  /* ---------- breakpoints ---------- */
+  @media (max-width: 639px) { .nav-cta { display: none; } }
+  @media (min-width: 640px) {
+    .strip-inner { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .new-list { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 860px) {
+    .nav-inner { gap: 28px; }
+    .nav-links { display: flex; }
+    .nav-cta .btn-ghost { display: inline-flex; }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+    .final-inner { grid-template-columns: 1.4fr auto; }
+    .receipt-float { display: block; }
+  }
+  @media (min-width: 980px) {
+    .hero-grid { grid-template-columns: 0.95fr 1.05fr; padding: 68px 0 84px; }
+    .hero-visual { margin-right: 0; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .split { grid-template-columns: 1fr 1fr; gap: 72px; }
+    .split.reverse .split-media { order: -1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="announce">
+  <b>New in Version 2.0</b> — one-click receipt printing and Excel export for every report. <a href="#whats-new">See what's new</a>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Hira Pharmacy home"><img src="assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
+      <a href="#receipts">Receipts</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-primary btn-sm" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg><span class="dl-label">Download</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Offline pharmacy software for Windows</div>
+      <h1>Billing, stock and expiry alerts — all in one offline pharmacy app.</h1>
+      <p class="lede">Hira Pharmacy runs on your own Windows PC. Sell faster at the counter, catch expiring medicines early, keep supplier and customer balances straight, and print receipts your customers can read.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg><span class="dl-label">Download for Windows</span>
+        </a>
+        <a class="btn btn-ghost btn-lg js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg> Get your license on WhatsApp
+        </a>
+      </div>
+      <p class="fineprint"><strong>Version 2.0.0</strong> · Windows 10 / 11 (64-bit) · 86 MB · Free to download</p>
+      <p class="fineprint">A license key activates the software after you install it.</p>
+      <p class="mobile-note">Hira Pharmacy installs on a Windows PC — tap the button to send yourself the download link.</p>
+      <p class="nonwin-note">Heads up: Hira Pharmacy is a Windows application and won't run on this device.</p>
+
+      <ul class="chips">
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works 100% offline</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Your data stays on your PC</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Automatic daily backup</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span>Hira Pharmacy — Dashboard</span></div>
+        <img src="assets/dashboard.png" width="1800" height="974" alt="Hira Pharmacy dashboard showing today's sales, stock count, low-stock and near-expiry alerts" fetchpriority="high">
+      </div>
+      <img class="receipt-float" src="assets/receipt.png" width="478" height="937" alt="Sample 80mm thermal receipt printed by Hira Pharmacy">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="container strip-inner">
+    <div class="strip-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M8 6v12M12 6v12M17 6v12M20 6v12"/></svg> Barcode scanner ready</div>
+    <div class="strip-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg> 80mm thermal &amp; A4 printing</div>
+    <div class="strip-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg> Reports in PDF &amp; Excel</div>
+    <div class="strip-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg> Import stock from Excel</div>
+  </div>
+</div>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Features</div>
+      <h2>Everything a counter needs, nothing it doesn't.</h2>
+      <p>Built around the daily routine of a pharmacy — from the first sale of the morning to the last backup of the night.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="icon-wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/><path d="M2 3h3l2.7 11.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg></div>
+        <h3>Fast counter billing</h3>
+        <p>Search or scan a barcode, press Enter, and the medicine is in the cart. Change the price or add a discount right on the line, then Save &amp; Print.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Expiry &amp; low-stock alerts</h3>
+        <p>Your dashboard flags expired, near-expiry and low-stock medicines every day, so nothing quietly loses you money.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div>
+        <h3>Import your stock from Excel</h3>
+        <p>Already have a list? Match your columns, preview every row, fix or skip the problem ones, and import the rest in one go. No retyping.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></div>
+        <h3>Suppliers &amp; customer credit</h3>
+        <p>Record purchases and returns by supplier, see what you owe, and keep track of credit sales and payments for each customer.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        <h3>PDF &amp; Excel reports <span class="badge-new">New</span></h3>
+        <p>Sales, purchase, profit, expense and top-selling reports. Print them, save a PDF, or open them in Excel with real numbers and dates.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Protected by default</h3>
+        <p>Optional PIN lock, a daily automatic backup, one-click backup to a USB drive, and a restore that always saves a safety copy first.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="screens">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">See it in action</div>
+      <h2>A screen for every part of the day.</h2>
+      <p>These are real screens from Hira Pharmacy 2.0, running on sample data.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Product screens">
+      <button class="tab" role="tab" id="t-sales" aria-selected="true" aria-controls="p-sales">Sales</button>
+      <button class="tab" role="tab" id="t-stock" aria-selected="false" aria-controls="p-stock" tabindex="-1">Stock</button>
+      <button class="tab" role="tab" id="t-reports" aria-selected="false" aria-controls="p-reports" tabindex="-1">Reports</button>
+      <button class="tab" role="tab" id="t-backup" aria-selected="false" aria-controls="p-backup" tabindex="-1">Backup</button>
+    </div>
+
+    <figure class="panel" role="tabpanel" id="p-sales" aria-labelledby="t-sales" style="margin:0">
+      <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Hira Pharmacy — Sales</span></div>
+      <img src="assets/sales.png" width="1800" height="974" loading="lazy" alt="Sales screen with a cart of three medicines and a Save and Print button"></div>
+      <figcaption>The counter screen: search or scan, adjust the price or discount, choose cash or credit, and Save &amp; Print.</figcaption>
+    </figure>
+    <figure class="panel" role="tabpanel" id="p-stock" aria-labelledby="t-stock" hidden style="margin:0">
+      <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Hira Pharmacy — Stock</span></div>
+      <img src="assets/stock.png" width="1800" height="974" loading="lazy" alt="Stock list with batch, expiry and status columns, including a near-expiry medicine highlighted"></div>
+      <figcaption>Every medicine with its batch, expiry and status at a glance — red for expired, orange for expiring soon, yellow for low stock.</figcaption>
+    </figure>
+    <figure class="panel" role="tabpanel" id="p-reports" aria-labelledby="t-reports" hidden style="margin:0">
+      <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Hira Pharmacy — Reports</span></div>
+      <img src="assets/reports.png" width="1800" height="974" loading="lazy" alt="Sales report with Print, Save PDF and Save Excel buttons"></div>
+      <figcaption>Pick a report and a period, then print it, save a PDF, or export it to Excel.</figcaption>
+    </figure>
+    <figure class="panel" role="tabpanel" id="p-backup" aria-labelledby="t-backup" hidden style="margin:0">
+      <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Hira Pharmacy — Backup</span></div>
+      <img src="assets/backup.png" width="1800" height="974" loading="lazy" alt="Backup screen with Backup Now, Restore Backup and daily Auto-Backup"></div>
+      <figcaption>Back up in one click, keep daily automatic copies, and restore with a safety net.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="receipts">
+  <div class="container split">
+    <div>
+      <div class="kicker">80mm thermal receipts</div>
+      <h2>Receipts your customers can actually read.</h2>
+      <p class="lead">Faint, grey, half-cut receipts make a shop look careless. Version 2 prints bold and black, and wastes no paper.</p>
+      <ul class="ticks">
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Solid black, bold type that stays sharp on thermal paper.</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Two lines per medicine, so long names never break in the middle of a word.</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Choose <b>Auto</b> length to fit the receipt, or your printer's fixed paper size.</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Preview the paper, pick your printer once, and print in one click — or turn on auto-print after each sale.</span></li>
+      </ul>
+    </div>
+    <div class="split-media">
+      <div class="receipt-stage">
+        <img src="assets/receipt.png" width="478" height="937" loading="lazy" alt="Sample thermal receipt with shop details, itemised medicines and total">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="whats-new">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Version 2.0</div>
+      <h2>What's new</h2>
+      <p>The biggest update yet, built from feedback from working pharmacies.</p>
+    </div>
+    <div class="new-list">
+      <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><div><b>One-click printing</b><span>Save &amp; Print opens a paper preview; choose your printer once and print straight to it.</span></div></div>
+      <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><div><b>Excel export for every report</b><span>Real numbers and real dates, ready to sort, total or chart.</span></div></div>
+      <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M8 6v12M12 6v12M17 6v12M20 6v12"/></svg><div><b>Sharper thermal receipts</b><span>Bold black text, tidy two-line items and an exact-length option that saves paper.</span></div></div>
+      <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg><div><b>Smarter stock import</b><span>Handles zero-stock rows and repeated barcodes without stopping, and tells you what it skipped.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">How it works</div>
+      <h2>Up and running in three steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Download and install</h3>
+        <p>Run the installer. If Windows shows “Windows protected your PC”, click <b>More info</b>, then <b>Run anyway</b>.</p>
+      </div>
+      <div class="step">
+        <h3>Activate with your license key</h3>
+        <p>Open Hira Pharmacy and send us the Machine ID it shows, on WhatsApp. We reply with your license key. No internet needed on the PC.</p>
+      </div>
+      <div class="step">
+        <h3>Add your shop and start selling</h3>
+        <p>Enter your shop name, address and logo, import your stock from Excel (or add medicines by hand), and make your first sale.</p>
+      </div>
+    </div>
+    <div class="steps-cta">
+      <a class="btn btn-primary btn-lg" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg><span class="dl-label">Download for Windows</span>
+      </a>
+      <a class="btn btn-outline btn-lg js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask us a question</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>Good questions, straight answers.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Do I need internet to use it?</summary>
+        <p>No. Hira Pharmacy runs entirely on your PC and keeps your data there. Even activation works offline: you send us a Machine ID, and we send back a license key.</p>
+      </details>
+      <details>
+        <summary>Is the download really free? What does the license cost?</summary>
+        <p>Downloading and installing is free. A license key activates the software for your shop — message us on WhatsApp at 0310-9888092 for pricing and to get your key.</p>
+      </details>
+      <details>
+        <summary>Windows says “Windows protected your PC”. Is it safe?</summary>
+        <p>That message appears for any installer that isn't yet code-signed with a paid publisher certificate. Click <b>More info</b>, then <b>Run anyway</b>. If you'd like reassurance first, call or message us and we'll walk you through it.</p>
+      </details>
+      <details>
+        <summary>Can I bring in the stock list I already have?</summary>
+        <p>Yes. Import from Excel lets you match your columns, preview each row, correct or skip problem rows, and import the rest. A sample template is built in if you'd like to start from one.</p>
+      </details>
+      <details>
+        <summary>Which printers does it work with?</summary>
+        <p>Any printer that has a Windows driver. Use A4 invoices for regular printers, or 80mm receipts for thermal printers. Choose your printer once on the print screen and it remembers.</p>
+      </details>
+      <details>
+        <summary>Is my data safe?</summary>
+        <p>Your data lives on your own PC. A backup is made automatically every day (the last 7 are kept), you can back up to a USB drive in one click, and restoring always makes a safety copy of your current data first.</p>
+      </details>
+      <details>
+        <summary>What do I need to run it?</summary>
+        <p>A Windows 10 or Windows 11 PC (64-bit). The download is about 86 MB. For anything else, such as using it on more than one computer, just ask us on WhatsApp.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container final-inner">
+    <div>
+      <h2>Try Hira Pharmacy on your own counter.</h2>
+      <p>Download it now, set it up in minutes, and message us on WhatsApp whenever you need a hand.</p>
+    </div>
+    <div class="cta-row" style="margin:0">
+      <a class="btn btn-primary btn-lg" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg><span class="dl-label">Download for Windows</span>
+      </a>
+      <a class="btn btn-ghost btn-lg js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp 0310-9888092</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container foot">
+    <div><b style="color:#fff">Hira Pharmacy</b> · Offline pharmacy management software · Version 2.0.0</div>
+    <div>Support: <a href="https://wa.me/923109888092" target="_blank" rel="noopener">0310-9888092</a> (call or WhatsApp) · © <span id="year">2026</span> Hira Technologies</div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn btn-primary js-wa-share" href="#">Send the download link to my PC</a>
+</div>
+
+<dialog id="dl-dialog" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <div class="tick"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></div>
+    <h2 id="dlg-title">Your download is starting</h2>
+    <p>Hira-Pharmacy-Setup.exe (86 MB). If nothing happens, <a href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">download it again</a>.</p>
+  </div>
+  <div class="dlg-body">
+    <ol>
+      <li>Open the file when it finishes downloading and follow the installer.</li>
+      <li>If Windows warns about an unknown publisher, click <b>More info</b>, then <b>Run anyway</b>.</li>
+      <li>Open Hira Pharmacy and send us the <b>Machine ID</b> it shows on WhatsApp to get your license key.</li>
+    </ol>
+    <div class="dlg-actions">
+      <a class="btn btn-primary js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <button class="btn btn-outline" type="button" id="dlg-close">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var DL_URL = 'https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe';
+  var PAGE_URL = 'https://marketerwaseem17.github.io/hira-pharmacy-downloads/';
+  var WA_NUMBER = '923109888092';
+  var root = document.documentElement;
+  var ua = navigator.userAgent || '';
+  var isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || !!(navigator.userAgentData && navigator.userAgentData.mobile);
+  var isWindows = /Windows/i.test(ua);
+
+  if (isMobile) root.setAttribute('data-platform', 'mobile');
+  else if (!isWindows) root.setAttribute('data-platform', 'other');
+
+  var waText = encodeURIComponent('Assalam o Alaikum, I downloaded Hira Pharmacy and would like my license key.');
+  document.querySelectorAll('.js-wa').forEach(function (a) { a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + waText; });
+
+  var dialog = document.getElementById('dl-dialog');
+  var canDialog = dialog && typeof dialog.showModal === 'function';
+
+  if (isMobile) {
+    // A phone can't install a Windows app — turn the download buttons into "send the link to my PC".
+    var share = 'https://wa.me/?text=' + encodeURIComponent('Hira Pharmacy — offline pharmacy software for Windows. Download on your PC: ' + PAGE_URL);
+    document.querySelectorAll('[data-download]').forEach(function (a) {
+      a.removeAttribute('data-download');
+      a.href = share;
+      a.target = '_blank';
+      var label = a.querySelector('.dl-label');
+      if (label) label.textContent = 'Send link to my PC';
+    });
+  }
+  var mobileBar = document.querySelector('.js-wa-share');
+  if (mobileBar) mobileBar.href = 'https://wa.me/?text=' + encodeURIComponent('Hira Pharmacy — offline pharmacy software for Windows. Download on your PC: ' + PAGE_URL);
+
+  // After the click, the browser starts the download by itself (the link points straight at the
+  // installer). We just show what to do next.
+  document.querySelectorAll('[data-download]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (!canDialog) return;
+      setTimeout(function () { if (!dialog.open) dialog.showModal(); }, 350);
+    });
+  });
+  if (canDialog) {
+    document.getElementById('dlg-close').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+  }
+
+  // Tabs
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n) { e.preventDefault(); select(n); n.focus(); }
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
