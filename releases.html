@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release Notes — Hira Pharmacy</title>
+<meta name="description" content="Every Hira Pharmacy release, in order, with what changed in each one — from the first thermal-receipt rewrite to the latest speed and reset improvements.">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="canonical" href="https://marketerwaseem17.github.io/hira-pharmacy-downloads/releases.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Release Notes — Hira Pharmacy">
+<meta property="og:description" content="Every Hira Pharmacy release, in order, with what changed in each one.">
+<meta property="og:url" content="https://marketerwaseem17.github.io/hira-pharmacy-downloads/releases.html">
+<meta property="og:image" content="https://marketerwaseem17.github.io/hira-pharmacy-downloads/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --navy-950: #0a1533;
+    --navy-900: #0f1f4d;
+    --navy-800: #16296b;
+    --navy-600: #1e3a8a;
+    --navy-200: #c9d5f5;
+    --navy-100: #e7ecfb;
+    --navy-50: #f3f6fd;
+    --green-500: #22c55e;
+    --green-400: #4ade80;
+    --green-900: #052e16;
+    --ink: #0f1b3d;
+    --muted: #52607d;
+    --line: #e2e8f5;
+    --bg: #f6f8fc;
+    --card: #ffffff;
+    --radius: 16px;
+    --shadow-md: 0 18px 40px -22px rgba(10, 21, 51, 0.35);
+    --font: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { margin: 0; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+  p { margin: 0; }
+  .container { width: min(860px, 100% - 40px); margin-inline: auto; }
+  .ic { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  :focus-visible { outline: 3px solid var(--green-400); outline-offset: 3px; border-radius: 6px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: #fff; color: var(--ink); padding: 8px 14px; border-radius: 8px; z-index: 100; }
+  .skip:focus { left: 8px; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+    border-radius: 12px; border: 1px solid transparent; padding: 14px 24px; line-height: 1.2;
+    transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--green-500); color: var(--green-900); box-shadow: 0 10px 28px -8px rgba(34, 197, 94, 0.7); }
+  .btn-primary:hover { background: var(--green-400); transform: translateY(-1px); }
+  .btn-ghost { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.28); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.16); }
+  .btn-sm { padding: 10px 16px; font-size: .92rem; border-radius: 10px; }
+  .btn-text { background: none; border: none; padding: 0; color: var(--navy-600); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; font-size: .92rem; }
+  .btn-text:hover { color: var(--navy-800); }
+
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(10, 21, 51, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-inner { display: flex; align-items: center; gap: 12px; min-height: 68px; width: min(1160px, 100% - 40px); margin-inline: auto; }
+  .brand { white-space: nowrap; display: flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .brand img { width: 34px; height: 34px; border-radius: 9px; background: #fff; padding: 3px; }
+  .nav-cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+  .nav-cta .btn { padding: 10px 14px; font-size: .92rem; white-space: nowrap; }
+  @media (max-width: 639px) { .nav-cta .btn-ghost { display: none; } }
+
+  .page-head {
+    color: #fff; position: relative; overflow: hidden; padding: 56px 0 48px;
+    background:
+      radial-gradient(900px 420px at 88% -20%, rgba(34, 197, 94, 0.16), transparent 60%),
+      linear-gradient(165deg, var(--navy-950) 0%, #12266a 58%, var(--navy-600) 100%);
+  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .84rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green-400); }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: currentColor; border-radius: 2px; }
+  .page-head h1 { font-size: clamp(1.9rem, 4.2vw, 2.7rem); font-weight: 800; margin: 16px 0 14px; }
+  .page-head p { color: var(--navy-200); font-size: 1.08rem; max-width: 40em; }
+
+  main { padding: 52px 0 88px; }
+
+  .release {
+    position: relative;
+    padding: 0 0 44px 34px;
+    border-left: 2px solid var(--line);
+  }
+  .release:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .release::before {
+    content: ""; position: absolute; left: -7px; top: 2px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--navy-600); border: 3px solid var(--bg);
+  }
+  .release.latest::before { background: var(--green-500); }
+
+  .release-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; margin-bottom: 6px; }
+  .release-version { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; }
+  .release-date { color: var(--muted); font-size: .92rem; }
+  .badge-latest {
+    font-size: .68rem; font-weight: 800; letter-spacing: .08em; padding: 3px 9px; border-radius: 999px;
+    background: var(--green-500); color: var(--green-900); text-transform: uppercase;
+  }
+
+  .release-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin-top: 10px; }
+  .release-group + .release-group { margin-top: 16px; }
+  .release-group-label { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .release-group-label.fixed { color: #b45309; }
+  .release-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .release-items li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink); }
+  .release-items .ic { color: var(--green-500); margin-top: 3px; width: 1.2em; height: 1.2em; stroke-width: 2.4; }
+  .release-items.fixed .ic { color: #b45309; }
+
+  .release-foot { display: flex; align-items: center; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+
+  footer { background: var(--navy-950); color: var(--navy-200); padding: 40px 0 44px; font-size: .94rem; }
+  .foot { width: min(1160px, 100% - 40px); margin-inline: auto; display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; }
+  footer a { color: #fff; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Hira Pharmacy home"><img src="assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-primary btn-sm" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>Download
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="container">
+    <div class="eyebrow">Release notes</div>
+    <h1>Everything that's changed in Hira Pharmacy.</h1>
+    <p>Every release, in order, with exactly what was added or fixed — most of it came straight from pharmacies actually using it day to day.</p>
+  </div>
+</div>
+
+<main id="main">
+  <div class="container">
+
+    <div class="release latest">
+      <div class="release-head">
+        <span class="release-version">Version 2.4.0</span>
+        <span class="badge-latest">Latest</span>
+        <span class="release-date">8 October 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label">New</div>
+          <ul class="release-items">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Reset All Data</b> in Settings — wipes every medicine, sale, purchase, customer, supplier, expense and cash entry so you can start from zero. Your shop name, logo and license stay activated; a safety backup is saved automatically first, and you must type your pharmacy's exact name to confirm.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.4.0/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <span class="release-version">Version 2.3.1</span>
+        <span class="release-date">8 October 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label fixed">Fixed</div>
+          <ul class="release-items fixed">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>Opening Stock with a large medicine list took several seconds — now well under a second. A "show all" link still lets you see everything at once when you want to.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.3.1/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <span class="release-version">Version 2.3.0</span>
+        <span class="release-date">8 October 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label">New</div>
+          <ul class="release-items">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Edit or delete a saved Purchase — stock and cost price are corrected automatically.</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Quick Add Medicine right from the Sales screen, without navigating away.</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>The Sales cart no longer empties if you step away to another screen and come back.</span></li>
+          </ul>
+        </div>
+        <div class="release-group">
+          <div class="release-group-label fixed">Fixed</div>
+          <ul class="release-items fixed">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>Download PDF from the receipt was producing a blank-looking file.</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>Searching a large stock list could take several seconds.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.3.0/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <span class="release-version">Version 2.2.0</span>
+        <span class="release-date">7 October 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label">New</div>
+          <ul class="release-items">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>The thermal receipt now shows the full discount breakdown — each discounted medicine shows its original price and discount %, plus a Gross Total / Medicine Discount / Subtotal / Bill Discount breakdown and a Total Savings line at the bottom.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.2.0/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <span class="release-version">Version 2.1.1</span>
+        <span class="release-date">6 October 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label fixed">Fixed</div>
+          <ul class="release-items fixed">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>The shop logo on thermal receipts was too small to read — it now prints clearly, and uploading a very large logo image no longer slows the app down.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.1.1/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <span class="release-version">Version 2.1.0</span>
+        <span class="release-date">6 October 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label">New</div>
+          <ul class="release-items">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Give a discount on one medicine (Rs. or %) in the Sales cart, as well as on the whole bill.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.1.0/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <span class="release-version">Version 2.0.0</span>
+        <span class="release-date">24 September 2026</span>
+      </div>
+      <div class="release-card">
+        <div class="release-group">
+          <div class="release-group-label">New</div>
+          <ul class="release-items">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>One-click receipt printing with a paper preview.</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Sharper thermal receipts — bold, black text instead of faint grey.</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>PDF and Excel export for every report.</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Smarter stock import from Excel.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="release-foot">
+        <a class="btn-text" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/download/v2.0.0/Hira-Pharmacy-Setup.exe" rel="noopener">Download this version</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <div><b style="color:#fff">Hira Pharmacy</b> · Offline pharmacy management software</div>
+    <div>Support: <a href="https://wa.me/923109888092" target="_blank" rel="noopener">0310-9888092</a> (call or WhatsApp) · © <span id="year">2026</span> Hira Technologies</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var WA_NUMBER = '923109888092';
+  var PAGE_URL = 'https://marketerwaseem17.github.io/hira-pharmacy-downloads/';
+  var ua = navigator.userAgent || '';
+  var isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || !!(navigator.userAgentData && navigator.userAgentData.mobile);
+
+  var waText = encodeURIComponent('Assalam o Alaikum, I downloaded Hira Pharmacy and would like my license key.');
+  document.querySelectorAll('.js-wa').forEach(function (a) { a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + waText; });
+
+  if (isMobile) {
+    var share = 'https://wa.me/?text=' + encodeURIComponent('Hira Pharmacy — offline pharmacy software for Windows. Download on your PC: ' + PAGE_URL);
+    document.querySelectorAll('[data-download]').forEach(function (a) {
+      a.removeAttribute('data-download');
+      a.href = share;
+      a.target = '_blank';
+    });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
