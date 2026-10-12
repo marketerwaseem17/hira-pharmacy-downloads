@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hira Pharmacy — Offline Pharmacy Software for Windows</title>
-<meta name="description" content="Billing, stock with expiry alerts, suppliers, cash book and reports in one offline pharmacy app for Windows. Import your stock from Excel and print receipts in one click. Download Hira Pharmacy 2.4.">
+<meta name="description" content="Billing, stock with expiry alerts, suppliers, cash book and reports in one offline pharmacy app for Windows. Import your stock from Excel and print receipts in one click. Download Hira Pharmacy 2.5.">
 <meta name="theme-color" content="#1e3a8a">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="canonical" href="https://marketerwaseem17.github.io/hira-pharmacy-downloads/">
@@ -177,6 +177,23 @@
   .receipt-stage { background: linear-gradient(160deg, var(--navy-100), #dfe7fb); border-radius: 22px; padding: 44px 24px; display: grid; place-items: center; }
   .receipt-stage img { width: min(300px, 78%); border-radius: 6px; box-shadow: 0 30px 60px -20px rgba(10, 21, 51, 0.5); border: 1px solid var(--line); background: #fff; }
 
+  /* ---------- compare ---------- */
+  .compare-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow-md); }
+  .compare { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 0; background: var(--card); }
+  .compare caption { text-align: left; }
+  .compare thead th { position: sticky; top: 0; background: var(--navy-950); color: var(--navy-200); font-size: .82rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; text-align: left; padding: 18px 22px; }
+  .compare thead th:first-child { color: #fff; }
+  .compare thead th.col-hira { background: linear-gradient(135deg, var(--navy-600), #164a2e 150%); color: #eafff1; }
+  .compare thead th.col-hira b { display: block; color: #fff; font-size: 1.02rem; text-transform: none; letter-spacing: -0.01em; margin-top: 2px; }
+  .compare tbody th { text-align: left; padding: 18px 22px; font-weight: 700; color: var(--navy-800); white-space: nowrap; border-bottom: 1px solid var(--line); }
+  .compare tbody td { padding: 18px 22px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
+  .compare td.cell-other { color: var(--muted); }
+  .compare td.cell-other::before { content: "✕"; display: inline-block; margin-right: 10px; color: #c23b3b; font-weight: 800; }
+  .compare td.cell-hira { background: var(--green-900, #052e16); background: rgba(34, 197, 94, 0.08); color: var(--navy-900); font-weight: 600; }
+  .compare td.cell-hira .ic { color: #16a34a; margin-right: 8px; width: 1.15em; height: 1.15em; vertical-align: -3px; stroke-width: 2.6; }
+  .compare-note { margin-top: 18px; color: var(--muted); font-size: .96rem; }
+
   /* ---------- what's new ---------- */
   .new-list { display: grid; gap: 14px; margin-top: 8px; }
   .new-item { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
@@ -263,7 +280,7 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <div class="announce">
-  <b>New in Version 2.4</b> — reset all data to zero right from Settings, with a safety backup first. <a href="releases.html">See what's new</a>
+  <b>New in Version 2.5</b> — flexible license plans (3-Day Trial, 1 Month, 1 Year, 5 Years, Lifetime). <a href="releases.html">See what's new</a>
 </div>
 
 <header class="nav">
@@ -271,6 +288,7 @@
     <a class="brand" href="#top" aria-label="Hira Pharmacy home"><img src="assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
     <nav class="nav-links" aria-label="Sections">
       <a href="#features">Features</a>
+      <a href="#compare">Compare</a>
       <a href="#screens">Screens</a>
       <a href="#receipts">Receipts</a>
       <a href="#how">How it works</a>
@@ -291,7 +309,7 @@
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow">Offline pharmacy software for Windows</div>
+      <div class="eyebrow">Offline pharmacy software for Windows · Built for Pakistan's pharmacies</div>
       <h1>Billing, stock and expiry alerts — all in one offline pharmacy app.</h1>
       <p class="lede">Hira Pharmacy runs on your own Windows PC. Sell faster at the counter, catch expiring medicines early, keep supplier and customer balances straight, and print receipts your customers can read.</p>
 
@@ -376,6 +394,65 @@
   </div>
 </section>
 
+<section class="section" id="compare">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Why switch</div>
+      <h2>Built different from everyday pharmacy software.</h2>
+      <p>A lot of pharmacy software sold in Pakistan was designed for a server room, not a shop counter. Hira Pharmacy was built the other way round — for the counter first.</p>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Typical pharmacy software</th>
+            <th scope="col" class="col-hira">Hira Pharmacy<b>Yours</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Internet</th>
+            <td class="cell-other">Needed just to open the software, every day</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Works 100% offline, with or without internet</td>
+          </tr>
+          <tr>
+            <th scope="row">Pricing</th>
+            <td class="cell-other">Monthly subscription that keeps charging forever</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Trial, 1 Month, 1 Year, 5 Years or Lifetime — your choice</td>
+          </tr>
+          <tr>
+            <th scope="row">Your data</th>
+            <td class="cell-other">Stored on someone else's server, out of your hands</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Stays on your own PC, backed up automatically every day</td>
+          </tr>
+          <tr>
+            <th scope="row">Getting started</th>
+            <td class="cell-other">Needs an IT person and takes days to set up</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Import your Excel stock list and start selling the same day</td>
+          </tr>
+          <tr>
+            <th scope="row">Support</th>
+            <td class="cell-other">Call centres, tickets, and waiting on hold</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Direct WhatsApp with the people who built it</td>
+          </tr>
+          <tr>
+            <th scope="row">Updates</th>
+            <td class="cell-other">New features often mean a paid upgrade</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Free updates for the life of your license</td>
+          </tr>
+          <tr>
+            <th scope="row">Receipts</th>
+            <td class="cell-other">Generic templates, faint on thermal paper</td>
+            <td class="cell-hira"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Bold 80mm thermal &amp; A4, printed with your own shop details</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-note">"Typical pharmacy software" describes common patterns we hear about from pharmacies switching to Hira Pharmacy — not any specific product.</p>
+  </div>
+</section>
+
 <section class="section section-alt" id="screens">
   <div class="container">
     <div class="section-head">
@@ -438,15 +515,15 @@
 <section class="section section-alt" id="whats-new">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Version 2.4</div>
+      <div class="kicker">Version 2.5</div>
       <h2>What's new</h2>
       <p>Built from feedback from working pharmacies.</p>
     </div>
     <div class="new-list">
+      <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Flexible license plans</b><span>3-Day Trial, 1 Month, 1 Year, 5 Years or Lifetime. Existing licenses keep working exactly as before.</span></div></div>
       <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m3 0-1 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 6"/></svg><div><b>Reset All Data</b><span>Wipe every medicine, sale and purchase and start from zero, with a safety backup taken automatically first.</span></div></div>
       <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><div><b>Much faster on a big stock list</b><span>Opening Stock went from several seconds to under half a second.</span></div></div>
       <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><div><b>Edit or delete a Purchase</b><span>Stock and cost price are corrected automatically — no more stuck entries.</span></div></div>
-      <div class="new-item"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><div><b>Quick Add Medicine</b><span>Add a missing medicine straight from the Sales screen, without navigating away.</span></div></div>
     </div>
     <p style="margin-top: 22px"><a class="btn-text-link" href="releases.html" style="color: var(--navy-600); font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">See the full release history →</a></p>
   </div>
