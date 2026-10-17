@@ -4,158 +4,105 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Release Notes — Hira Pharmacy</title>
-<meta name="description" content="Every Hira Pharmacy release, in order, with what changed in each one — from the first thermal-receipt rewrite to the latest speed and reset improvements.">
-<meta name="theme-color" content="#1e3a8a">
+<meta name="description" content="Every Hira Pharmacy release, in order, with what changed in each one: from the thermal-receipt rewrite to strip and tablet selling, the Short List and the new look.">
+<meta name="theme-color" content="#060d24">
 <link rel="icon" type="image/png" href="assets/logo.png">
-<link rel="canonical" href="https://marketerwaseem17.github.io/hira-pharmacy-downloads/releases.html">
+<link rel="canonical" href="https://nayahiradigital.store/releases.html">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=300">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Release Notes — Hira Pharmacy">
 <meta property="og:description" content="Every Hira Pharmacy release, in order, with what changed in each one.">
-<meta property="og:url" content="https://marketerwaseem17.github.io/hira-pharmacy-downloads/releases.html">
-<meta property="og:image" content="https://marketerwaseem17.github.io/hira-pharmacy-downloads/assets/og.png?v=261">
+<meta property="og:url" content="https://nayahiradigital.store/releases.html">
+<meta property="og:image" content="https://nayahiradigital.store/assets/og.png?v=300">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  :root {
-    --navy-950: #0a1533;
-    --navy-900: #0f1f4d;
-    --navy-800: #16296b;
-    --navy-600: #1e3a8a;
-    --navy-200: #c9d5f5;
-    --navy-100: #e7ecfb;
-    --navy-50: #f3f6fd;
-    --green-500: #22c55e;
-    --green-400: #4ade80;
-    --green-900: #052e16;
-    --ink: #0f1b3d;
-    --muted: #52607d;
-    --line: #e2e8f5;
-    --bg: #f6f8fc;
-    --card: #ffffff;
-    --radius: 16px;
-    --shadow-md: 0 18px 40px -22px rgba(10, 21, 51, 0.35);
-    --font: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    font-family: var(--font);
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--ink);
-    background: var(--bg);
-    -webkit-font-smoothing: antialiased;
-  }
-  img { max-width: 100%; height: auto; display: block; }
-  a { color: inherit; }
-  h1, h2, h3 { margin: 0; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
-  p { margin: 0; }
-  .container { width: min(860px, 100% - 40px); margin-inline: auto; }
-  .ic { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-  :focus-visible { outline: 3px solid var(--green-400); outline-offset: 3px; border-radius: 6px; }
-  .skip { position: absolute; left: -999px; top: 8px; background: #fff; color: var(--ink); padding: 8px 14px; border-radius: 8px; z-index: 100; }
-  .skip:focus { left: 8px; }
-
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
-    border-radius: 12px; border: 1px solid transparent; padding: 14px 24px; line-height: 1.2;
-    transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
-  }
-  .btn:active { transform: translateY(1px); }
-  .btn-primary { background: var(--green-500); color: var(--green-900); box-shadow: 0 10px 28px -8px rgba(34, 197, 94, 0.7); }
-  .btn-primary:hover { background: var(--green-400); transform: translateY(-1px); }
-  .btn-ghost { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.28); }
-  .btn-ghost:hover { background: rgba(255,255,255,0.16); }
-  .btn-sm { padding: 10px 16px; font-size: .92rem; border-radius: 10px; }
-  .btn-text { background: none; border: none; padding: 0; color: var(--navy-600); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; font-size: .92rem; }
-  .btn-text:hover { color: var(--navy-800); }
-
-  .nav { position: sticky; top: 0; z-index: 50; background: rgba(10, 21, 51, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .nav-inner { display: flex; align-items: center; gap: 12px; min-height: 68px; width: min(1160px, 100% - 40px); margin-inline: auto; }
-  .brand { white-space: nowrap; display: flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
-  .brand img { width: 34px; height: 34px; border-radius: 9px; background: #fff; padding: 3px; }
-  .nav-cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
-  .nav-cta .btn { padding: 10px 14px; font-size: .92rem; white-space: nowrap; }
-  @media (max-width: 639px) { .nav-cta .btn-ghost { display: none; } }
-
-  .page-head {
-    color: #fff; position: relative; overflow: hidden; padding: 56px 0 48px;
+  body { background: var(--soft); }
+  .container.narrow { width: min(860px, 100% - 48px); }
+  .page-head { position: relative; overflow: hidden; color: #fff; padding: 76px 0 68px;
     background:
-      radial-gradient(900px 420px at 88% -20%, rgba(34, 197, 94, 0.16), transparent 60%),
-      linear-gradient(165deg, var(--navy-950) 0%, #12266a 58%, var(--navy-600) 100%);
-  }
-  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .84rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green-400); }
-  .eyebrow::before { content: ""; width: 26px; height: 2px; background: currentColor; border-radius: 2px; }
-  .page-head h1 { font-size: clamp(1.9rem, 4.2vw, 2.7rem); font-weight: 800; margin: 16px 0 14px; }
-  .page-head p { color: var(--navy-200); font-size: 1.08rem; max-width: 40em; }
+      radial-gradient(900px 420px at 88% -20%, rgba(34, 197, 94, 0.20), transparent 60%),
+      radial-gradient(900px 520px at 0% 0%, rgba(59, 100, 220, 0.38), transparent 62%),
+      linear-gradient(180deg, #060d24 0%, #0d2260 100%); }
+  .page-head::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.3px); background-size: 30px 30px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 100% at 30% 0%, #000, transparent 80%); mask-image: radial-gradient(ellipse 70% 100% at 30% 0%, #000, transparent 80%); }
+  .page-head .container { position: relative; }
+  .page-head h1 { font-size: clamp(2.1rem, 4.8vw, 3.2rem); font-weight: 800; margin: 14px 0 16px; letter-spacing: -0.035em; }
+  .page-head p { color: #bfcdf0; font-size: 1.15rem; max-width: 36em; text-wrap: balance; }
+  .page-head .kicker { color: var(--green-400); }
+  .page-head .kicker::before { background: var(--green-400); }
+  main { padding: 64px 0 96px; }
 
-  main { padding: 52px 0 88px; }
-
-  .release {
-    position: relative;
-    padding: 0 0 44px 34px;
-    border-left: 2px solid var(--line);
-  }
+  .release { position: relative; padding: 0 0 44px 36px; border-left: 2px solid var(--line-2); }
   .release:last-child { border-left-color: transparent; padding-bottom: 0; }
-  .release::before {
-    content: ""; position: absolute; left: -7px; top: 2px; width: 12px; height: 12px;
-    border-radius: 50%; background: var(--navy-600); border: 3px solid var(--bg);
-  }
-  .release.latest::before { background: var(--green-500); }
-
-  .release-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; margin-bottom: 6px; }
-  .release-version { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; }
-  .release-date { color: var(--muted); font-size: .92rem; }
-  .badge-latest {
-    font-size: .68rem; font-weight: 800; letter-spacing: .08em; padding: 3px 9px; border-radius: 999px;
-    background: var(--green-500); color: var(--green-900); text-transform: uppercase;
-  }
-
-  .release-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin-top: 10px; }
-  .release-group + .release-group { margin-top: 16px; }
-  .release-group-label { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-  .release-group-label.fixed { color: #b45309; }
-  .release-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  .release-items li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink); }
-  .release-items .ic { color: var(--green-500); margin-top: 3px; width: 1.2em; height: 1.2em; stroke-width: 2.4; }
-  .release-items.fixed .ic { color: #b45309; }
-
-  .release-foot { display: flex; align-items: center; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
-
-  footer { background: var(--navy-950); color: var(--navy-200); padding: 40px 0 44px; font-size: .94rem; }
-  .foot { width: min(1160px, 100% - 40px); margin-inline: auto; display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; }
-  footer a { color: #fff; text-decoration: none; font-weight: 600; }
-  footer a:hover { text-decoration: underline; }
-
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  .release::before { content: ""; position: absolute; left: -8px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--navy-600); border: 3px solid var(--soft); }
+  .release.latest::before { background: var(--green-500); box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.2); }
+  .release-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 8px; }
+  .release-version { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.025em; }
+  .release-date { color: var(--muted); font-size: 0.93rem; }
+  .badge-latest { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 999px; background: var(--green-500); color: var(--green-950); text-transform: uppercase; }
+  .release-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px 26px; margin-top: 10px; box-shadow: var(--shadow-sm); }
+  .release-group + .release-group { margin-top: 18px; }
+  .release-group-label { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--green-600); margin-bottom: 10px; }
+  .release-group-label.fixed { color: var(--amber-600); }
+  .release-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .release-items li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink-2); font-size: 1rem; }
+  .release-items .ic { color: var(--green-500); margin-top: 4px; width: 1.15em; height: 1.15em; stroke-width: 2.5; }
+  .release-items.fixed .ic { color: var(--amber-600); }
+  .release-items b { color: var(--ink); }
+  .release-foot { display: flex; align-items: center; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+  .btn-text { color: var(--navy-600); font-weight: 650; text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid var(--navy-200); padding-bottom: 1px; }
+  .btn-text:hover { border-color: var(--navy-600); }
+  .back-top { margin-top: 48px; text-align: center; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="Hira Pharmacy home"><img src="assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
-    <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp us</a>
-      <a class="btn btn-primary btn-sm" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
-        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>Download
-      </a>
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Hira Pharmacy home"><img src="assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#screens">Screens</a>
+        <a href="index.html#compare">Compare</a>
+        <a href="index.html#plans">Plans</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="releases.html" aria-current="page" style="color:#fff">Releases</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn btn-primary" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>Download
+        </a>
+        <button class="nav-toggle" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Sections (mobile)">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#screens">Screens</a>
+      <a href="index.html#compare">Compare</a>
+      <a href="index.html#plans">Plans</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="releases.html">Release notes</a>
+    </nav>
   </div>
 </header>
 
 <div class="page-head">
-  <div class="container">
-    <div class="eyebrow">Release notes</div>
+  <div class="container narrow">
+    <div class="kicker">Release notes</div>
     <h1>Everything that's changed in Hira Pharmacy.</h1>
-    <p>Every release, in order, with exactly what was added or fixed — most of it came straight from pharmacies actually using it day to day.</p>
+    <p>Every release, in order, with exactly what was added or fixed. Most of it came straight from pharmacies using it day to day.</p>
   </div>
 </div>
 
 <main id="main">
-  <div class="container">
+  <div class="container narrow">
 
     <div class="release latest">
       <div class="release-head">
@@ -368,32 +315,66 @@
   </div>
 </main>
 
+<section class="final">
+  <div class="container final-inner">
+    <h2>Get the latest version.</h2>
+    <p>Install over your current version. Your data and license stay exactly as they are.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>Download for Windows
+      </a>
+      <a class="btn btn-ghost btn-lg js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp 0310-9888092</a>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="foot">
-    <div><b style="color:#fff">Hira Pharmacy</b> · Offline pharmacy management software</div>
-    <div>Support: <a href="https://wa.me/923109888092" target="_blank" rel="noopener">0310-9888092</a> (call or WhatsApp) · © <span id="year">2026</span> Hira Technologies</div>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="34" height="34" loading="lazy"> Hira Pharmacy</a>
+        <p>Offline pharmacy management software for Windows, built for Pakistan's pharmacies.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#screens">Screens</a>
+        <a href="index.html#compare">Compare</a>
+        <a href="index.html#plans">Plans</a>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <a href="releases.html">Release notes</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener">Download</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a class="js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp 0310-9888092</a>
+        <a href="tel:+923109888092">Call 0310-9888092</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Hira Technologies · Version 2.6.1</span>
+      <span>Made in Pakistan · Support on <a class="js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp</a></span>
+    </div>
   </div>
 </footer>
 
 <script>
 (function () {
   var WA_NUMBER = '923109888092';
-  var PAGE_URL = 'https://marketerwaseem17.github.io/hira-pharmacy-downloads/';
-  var ua = navigator.userAgent || '';
-  var isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || !!(navigator.userAgentData && navigator.userAgentData.mobile);
-
-  var waText = encodeURIComponent('Assalam o Alaikum, I downloaded Hira Pharmacy and would like my license key.');
+  var waText = encodeURIComponent('Assalam o Alaikum, I would like to ask about Hira Pharmacy.');
   document.querySelectorAll('.js-wa').forEach(function (a) { a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + waText; });
-
-  if (isMobile) {
-    var share = 'https://wa.me/?text=' + encodeURIComponent('Hira Pharmacy — offline pharmacy software for Windows. Download on your PC: ' + PAGE_URL);
-    document.querySelectorAll('[data-download]').forEach(function (a) {
-      a.removeAttribute('data-download');
-      a.href = share;
-      a.target = '_blank';
+  var toggle = document.getElementById('nav-toggle');
+  var menu = document.getElementById('nav-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
-
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
 </script>
