@@ -181,7 +181,7 @@
   .steps-cta { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
   /* ---------- plans ---------- */
-  .plans { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  .plans { max-width: 440px; margin-inline: auto; display: grid; gap: 16px; grid-template-columns: 1fr; }
   .plan { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s; }
   .plan:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
   .plan h3 { font-size: 1.15rem; font-weight: 760; letter-spacing: -0.02em; }
@@ -192,6 +192,9 @@
   .plan .btn { margin-top: auto; }
   .plan.featured { border-color: transparent; background: linear-gradient(#fff, #fff) padding-box, linear-gradient(160deg, var(--navy-500), var(--green-500)) border-box; border: 2px solid transparent; box-shadow: var(--shadow-md); }
   .plan .ribbon { position: absolute; top: -13px; left: 22px; background: var(--green-500); color: var(--green-950); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 999px; padding: 4px 12px; }
+  .plan .price { display: flex; align-items: baseline; gap: 8px; margin: 4px 0 6px; }
+  .plan .price b { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .plan .price span { color: var(--muted); font-weight: 600; }
   .plans-note { margin-top: 24px; text-align: center; color: var(--muted); font-size: 0.98rem; text-wrap: balance; }
 
   /* ---------- FAQ ---------- */
@@ -217,7 +220,7 @@
     .bento { grid-template-columns: repeat(2, 1fr); }
     .bcard.wide { grid-column: span 2; }
     .steps { grid-template-columns: repeat(3, 1fr); }
-    .plans { grid-template-columns: repeat(2, 1fr); }
+    .plans { grid-template-columns: 1fr; }
   }
   @media (min-width: 1000px) {
     .bento { grid-template-columns: repeat(6, 1fr); }
@@ -226,7 +229,7 @@
     .bcard.half { grid-column: span 3; }
     .split { grid-template-columns: 1fr 1fr; gap: 84px; }
     .split.reverse .split-media { order: -1; }
-    .plans { grid-template-columns: repeat(5, 1fr); }
+    .plans { grid-template-columns: 1fr; }
     .bcard.wide .shot-crop { aspect-ratio: 16 / 7.4; }
   }
   @media (min-width: 1260px) {
@@ -516,7 +519,7 @@
           <tr>
             <th scope="row">Pricing</th>
             <td class="cell-other" data-label="Typical software">Monthly subscription that keeps charging forever</td>
-            <td class="cell-hira" data-label="Hira Pharmacy"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Trial, 1 Month, 1 Year, 5 Years or Lifetime, your choice</td>
+            <td class="cell-hira" data-label="Hira Pharmacy"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>One payment of Rs. 5,000 for a lifetime license</td>
           </tr>
           <tr>
             <th scope="row">Your data</th>
@@ -583,63 +586,25 @@
   <div class="container">
     <div class="section-head center reveal">
       <div class="kicker">Plans</div>
-      <h2>Choose how long you want to use it.</h2>
-      <p>Every plan includes every feature. The only difference is how long your license runs.</p>
+      <h2>One price. Yours for life.</h2>
+      <p>No subscriptions and no hidden charges. Every feature is included.</p>
     </div>
     <div class="plans">
-      <div class="plan reveal">
-        <h3>3-Day Trial</h3>
-        <p class="blurb">Try everything on your own counter first.</p>
-        <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> All features</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works offline</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> WhatsApp support</li>
-        </ul>
-        <a class="btn btn-outline js-plan" data-plan="3-Day Trial" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask on WhatsApp</a>
-      </div>
-      <div class="plan reveal">
-        <h3>1 Month</h3>
-        <p class="blurb">For short-term or seasonal use.</p>
-        <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> All features</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works offline</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> WhatsApp support</li>
-        </ul>
-        <a class="btn btn-outline js-plan" data-plan="1 Month" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask on WhatsApp</a>
-      </div>
-      <div class="plan reveal">
-        <h3>1 Year</h3>
-        <p class="blurb">A full year on Hira Pharmacy.</p>
-        <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> All features</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works offline</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> WhatsApp support</li>
-        </ul>
-        <a class="btn btn-outline js-plan" data-plan="1 Year" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask on WhatsApp</a>
-      </div>
-      <div class="plan reveal">
-        <h3>5 Years</h3>
-        <p class="blurb">Set it up once and run for five years.</p>
-        <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> All features</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works offline</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> WhatsApp support</li>
-        </ul>
-        <a class="btn btn-outline js-plan" data-plan="5 Years" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask on WhatsApp</a>
-      </div>
       <div class="plan featured reveal">
         <span class="ribbon">Pay once</span>
-        <h3>Lifetime</h3>
-        <p class="blurb">Pay once. No renewal, ever.</p>
+        <h3>Lifetime License</h3>
+        <p class="price"><b>Rs. 5,000</b><span>one-time</span></p>
+        <p class="blurb">Pay once. No monthly fees, no renewal, ever.</p>
         <ul>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> All features</li>
-          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works offline</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> All features included</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Works 100% offline</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> Free updates</li>
           <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg> WhatsApp support</li>
         </ul>
-        <a class="btn btn-primary js-plan" data-plan="Lifetime" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        <a class="btn btn-primary js-plan" data-plan="Lifetime (Rs. 5,000)" href="https://wa.me/923109888092" target="_blank" rel="noopener">Get it on WhatsApp</a>
       </div>
     </div>
-    <p class="plans-note">Prices are shared on WhatsApp so we can recommend the right plan for your shop. Existing customers keep their current license.</p>
+    <p class="plans-note">Pay once on WhatsApp and receive your license key. Existing customers keep their current license.</p>
   </div>
 </section>
 
@@ -782,7 +747,7 @@
   document.querySelectorAll('.js-wa').forEach(function (a) { a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + waText; });
   document.querySelectorAll('.js-plan').forEach(function (a) {
     var plan = a.getAttribute('data-plan');
-    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('Assalam o Alaikum, I would like the ' + plan + ' plan for Hira Pharmacy. Please share the price.');
+    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('Assalam o Alaikum, I would like the ' + plan + ' plan for Hira Pharmacy. Please tell me how to pay.');
   });
 
   var dialog = document.getElementById('dl-dialog');
