@@ -3,7 +3,7 @@
 Landing page and installer downloads for **Hira Pharmacy**, offline pharmacy management software for Windows by Hira Technologies.
 
 - Landing page: https://marketerwaseem17.github.io/hira-pharmacy-downloads/
-- Latest installer (starts downloading immediately): https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe
+- Latest installer (starts downloading immediately): https://nayahiradigital.store/download/
 
 Requires Windows 10 / 11 (64-bit). A license key activates the software after installation — message 0310-9888092 on WhatsApp.
 
