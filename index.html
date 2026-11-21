@@ -289,6 +289,17 @@
   .smart-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
   @media (max-width: 900px) { .smart-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 600px) { .smart-grid { grid-template-columns: 1fr; } }
+
+  .dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 960px; margin: 0 auto; }
+  .dl-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px; }
+  .dl-card h3 { margin: 4px 0 0; font-size: 1.3rem; letter-spacing: -0.02em; }
+  .dl-card p { margin: 0; color: var(--muted); }
+  .dl-ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: var(--navy-100); color: var(--navy-600); font-weight: 800; }
+  .dl-card .btn { align-self: flex-start; margin-top: 8px; }
+  .dl-apk { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .dl-qr { border: 1px solid var(--line); border-radius: 12px; padding: 4px; background: #fff; }
+  .dl-fine { font-size: 0.88rem; }
+  @media (max-width: 760px) { .dl-grid { grid-template-columns: 1fr; } .dl-qr { display: none; } }
 </style>
 </head>
 <body>
@@ -303,6 +314,7 @@
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Hira Pharmacy home"><img src="assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
       <nav class="nav-links" aria-label="Sections">
+        <a href="#download">Download</a>
         <a href="#features">Features</a>
         <a href="#cloud">Cloud</a>
         <a href="#screens">Screens</a>
@@ -322,6 +334,7 @@
       </div>
     </div>
     <nav class="nav-menu" id="nav-menu" aria-label="Sections (mobile)">
+      <a href="#download">Download</a>
       <a href="#features">Features</a>
       <a href="#cloud">Cloud</a>
       <a href="#screens">Screens</a>
@@ -388,6 +401,35 @@
       <div class="stat reveal"><div class="stat-num">100%</div><div class="stat-label">offline, no internet needed</div></div>
       <div class="stat reveal"><div class="stat-num">80mm + A4</div><div class="stat-label">receipts, printed in one click</div></div>
       <div class="stat reveal"><div class="stat-num">Daily</div><div class="stat-label">automatic backup, last 7 kept</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="download">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">Downloads</div>
+      <h2>Get Hira on your computer and your phone.</h2>
+      <p>The software runs on the shop's Windows PC. The Hira Live app shows your shop on your Android phone.</p>
+    </div>
+    <div class="dl-grid">
+      <div class="dl-card reveal">
+        <div class="dl-ico">PC</div>
+        <h3>Hira Pharmacy for Windows</h3>
+        <p>Version 2.12.0 &middot; Windows 10 / 11 (64-bit) &middot; 86 MB. A license key activates it after you install.</p>
+        <a class="btn btn-primary btn-lg" data-download href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg> <span class="dl-label">Download for Windows</span></a>
+        <p class="dl-fine">Updating? Install over your old version. Your data stays.</p>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-ico">App</div>
+        <h3>Hira Live for Android</h3>
+        <p>See today's sales, profit, cash, stock and expiry on your phone. Needs Hira Cloud (1-day free trial inside Hira). Android 7 or newer.</p>
+        <div class="dl-apk">
+          <a class="btn btn-primary btn-lg" href="https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/HiraLive.apk" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg> Download APK</a>
+          <img class="dl-qr" src="assets/qr-hira-live.png" width="132" height="132" alt="QR code: scan with your phone camera to download Hira Live" loading="lazy">
+        </div>
+        <p class="dl-fine">On your phone, tap the button or scan the code. If Android asks, allow installing from this source.</p>
+      </div>
     </div>
   </div>
 </section>
