@@ -23,7 +23,7 @@
   "name": "Hira Pharmacy",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows 10, Windows 11",
-  "softwareVersion": "2.11.0",
+  "softwareVersion": "2.12.0",
   "description": "Offline pharmacy management software: billing, stock and expiry alerts, suppliers, cash book and reports.",
   "downloadUrl": "https://github.com/marketerwaseem17/hira-pharmacy-downloads/releases/latest/download/Hira-Pharmacy-Setup.exe",
   "author": { "@type": "Organization", "name": "Hira Technologies" }
@@ -282,6 +282,13 @@
   @media (max-width: 860px) { .cloud-wrap { grid-template-columns: 1fr; gap: 36px; } .plans.two { grid-template-columns: 1fr; max-width: 440px; } }
   .btn-outline { background: #fff; color: var(--navy-700); border: 1.5px solid var(--navy-200, #c7d4f5); }
   .btn-outline:hover { background: var(--navy-100); }
+
+  .smart-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .smart-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; box-shadow: var(--shadow-sm); }
+  .smart-card h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
+  .smart-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+  @media (max-width: 900px) { .smart-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .smart-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -330,7 +337,7 @@
 
 <section class="hero" id="top">
   <div class="container hero-inner">
-    <a class="pill-new" href="releases.html"><b>New</b> Version 2.11.0 — Hira Cloud: your shop live on your phone, plus automatic cloud backup <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:1em;height:1em"><path d="m9 6 6 6-6 6"/></svg></a>
+    <a class="pill-new" href="releases.html"><b>New</b> Version 2.12.0 — 21,000 Pakistani medicines with prices, same-salt alternatives, smart reorder and expiry insights <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:1em;height:1em"><path d="m9 6 6 6-6 6"/></svg></a>
     <h1>Run your whole pharmacy from one <span class="grad">fast, offline app.</span></h1>
     <p class="lede">Billing, stock, expiry alerts, suppliers and reports, all on your own Windows PC. No internet needed, and your data stays in your shop.</p>
 
@@ -342,7 +349,7 @@
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg> Get your license on WhatsApp
       </a>
     </div>
-    <p class="hero-meta"><strong>Version 2.11.0</strong> · Windows 10 / 11 (64-bit) · 86 MB · Free to download</p>
+    <p class="hero-meta"><strong>Version 2.12.0</strong> · Windows 10 / 11 (64-bit) · 86 MB · Free to download</p>
     <p class="hero-meta">A license key activates the software after you install it.</p>
     <p class="mobile-note">Hira Pharmacy installs on a Windows PC. Tap the button to send yourself the download link.</p>
     <p class="nonwin-note">Heads up: Hira Pharmacy is a Windows application and won't run on this device.</p>
@@ -624,6 +631,24 @@
   </div>
 </section>
 
+<section class="section section-soft" id="smart">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">New in 2.12</div>
+      <h2>A smarter counter, and a smarter owner.</h2>
+      <p>Less typing at the counter, and clear answers about what to order, what to send back and where your money is stuck.</p>
+    </div>
+    <div class="smart-grid">
+      <article class="smart-card reveal"><h3>21,000 medicines, built in</h3><p>Type a name and the salt, company, pack and MRP from the DRAP price list fill in by themselves. Adding stock takes seconds, not hours.</p></article>
+      <article class="smart-card reveal"><h3>Same-salt alternatives</h3><p>Customer asks for a medicine you do not have? Hira shows what you do have with the same salt and strength, cheapest first. One click adds it to the bill.</p></article>
+      <article class="smart-card reveal"><h3>Insights for the owner</h3><p>What to reorder (with a WhatsApp order for each supplier), what to send back before it expires, what has not sold in 60 days, and your best earners.</p></article>
+      <article class="smart-card reveal"><h3>Daily summary on WhatsApp</h3><p>Every evening the day's sales, profit, cash and udhaar arrive on your phone, even when you are not at the shop.</p></article>
+      <article class="smart-card reveal"><h3>Staff and activity log</h3><p>See who changed a price, deleted a payment or adjusted stock. Add your staff and pick who is working at the counter.</p></article>
+      <article class="smart-card reveal"><h3>One-click updates</h3><p>When a new Hira is ready, a bar appears inside the software. One click updates it and keeps all your data.</p></article>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="cloud">
   <div class="container">
     <div class="cloud-wrap">
@@ -637,7 +662,7 @@
           <li><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 11h12v9H6zM8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><b>Private and encrypted</b><span>Your backups are locked with your own recovery code. Nobody else, including us, can read them.</span></div></li>
         </ul>
         <ol class="cloud-steps">
-          <li>Update to 2.11.0</li>
+          <li>Update to 2.12.0</li>
           <li>Start the free trial in Hira</li>
           <li>Install Hira Live and link your phone</li>
         </ol>
