@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hira Pharmacy for Android — Run your pharmacy from your phone</title>
+<meta name="description" content="Hira Pharmacy for Android: billing, stock, expiry alerts, suppliers and reports on your phone, offline, with backup to your Google Drive. No computer needed.">
+<meta name="theme-color" content="#060d24">
+<link rel="icon" type="image/png" href="../assets/logo.png">
+<link rel="canonical" href="https://nayahiradigital.store/mobile/">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css?v=300">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hira Pharmacy for Android — Run your pharmacy from your phone">
+<meta property="og:description" content="Billing, stock, expiry alerts and reports on your phone. Works offline. Backup to Google Drive. No computer needed.">
+<meta property="og:url" content="https://nayahiradigital.store/mobile/">
+<meta property="og:image" content="https://nayahiradigital.store/assets/og.png?v=300">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Hira Pharmacy for Android",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Android 7.0 or newer",
+  "softwareVersion": "1.0.0",
+  "description": "Offline pharmacy management on an Android phone: billing, stock and expiry alerts, suppliers, customers and reports, with backup to Google Drive.",
+  "downloadUrl": "https://nayahiradigital.store/mobile/get/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" },
+  "author": { "@type": "Organization", "name": "Hira Technologies" }
+}
+</script>
+<style>
+  .hero { position: relative; color: #fff; overflow: hidden;
+    background:
+      radial-gradient(900px 520px at 88% -12%, rgba(34, 197, 94, 0.20), transparent 60%),
+      radial-gradient(1000px 680px at 2% 18%, rgba(59, 100, 220, 0.42), transparent 62%),
+      linear-gradient(180deg, #060d24 0%, #0a1a4a 62%, #112a70 100%); }
+  .hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.3px); background-size: 30px 30px;
+    -webkit-mask-image: radial-gradient(ellipse 75% 62% at 50% 30%, #000, transparent 78%); mask-image: radial-gradient(ellipse 75% 62% at 50% 30%, #000, transparent 78%); }
+  .hero-grid { position: relative; display: grid; gap: 48px; align-items: center; padding: 72px 0 84px; }
+  .pill-beta { display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px 6px 6px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #dbe5ff; font-size: 0.9rem; font-weight: 550; }
+  .pill-beta b { background: var(--green-500); color: var(--green-950); border-radius: 999px; padding: 3px 10px; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 800; margin: 24px 0 0; letter-spacing: -0.038em; line-height: 1.05; }
+  .hero h1 .grad { background: linear-gradient(95deg, #86efac 0%, #4ade80 38%, #7dd3fc 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .lede { margin-top: 22px; max-width: 34rem; color: #bfcdf0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.55; }
+  .hero .cta-row { margin-top: 32px; align-items: center; }
+  .hero-meta { margin-top: 18px; color: #9fb1dc; font-size: 0.93rem; }
+  .hero-meta strong { color: #fff; font-weight: 650; }
+  .hero-qr { display: none; align-items: center; gap: 14px; margin-top: 26px; color: #bfcdf0; font-size: 0.92rem; }
+  .hero-qr img { width: 96px; height: 96px; border-radius: 12px; background: #fff; padding: 4px; }
+  .hero-phones { display: flex; justify-content: center; align-items: flex-start; gap: 18px; position: relative; }
+  .hero-phones .phone { width: 230px; }
+  .hero-phones .phone:nth-child(2) { margin-top: 48px; }
+  .phone { position: relative; z-index: 1; width: 280px; border-radius: 38px; padding: 11px; background: #0b1220; box-shadow: 0 40px 70px -28px rgba(10, 26, 74, 0.6), inset 0 0 0 2px #26324d; }
+  .phone-screen { border-radius: 28px; overflow: hidden; background: #f4f6fa; }
+  .phone-screen img { width: 100%; aspect-ratio: 496 / 751; object-fit: cover; object-position: top; }
+  @media (min-width: 960px) {
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; padding: 88px 0 96px; }
+    .hero-qr { display: flex; }
+  }
+  @media (max-width: 520px) { .hero-phones .phone { width: 150px; border-radius: 28px; padding: 7px; } .hero-phones .phone-screen { border-radius: 21px; } .hero-phones { gap: 12px; } .hero-phones .phone:nth-child(2) { margin-top: 28px; } }
+
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feat { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px; box-shadow: var(--shadow-sm); }
+  .feat .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--navy-100); color: var(--navy-600); margin-bottom: 14px; }
+  .feat .ico .ic { width: 22px; height: 22px; }
+  .feat h3 { font-size: 1.1rem; letter-spacing: -0.015em; margin-bottom: 6px; }
+  .feat p { color: var(--muted); font-size: 0.97rem; }
+  @media (max-width: 900px) { .feat-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .feat-grid { grid-template-columns: 1fr; } }
+
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; justify-items: center; }
+  .shots figure { margin: 0; text-align: center; }
+  .shots .phone { width: 100%; max-width: 230px; }
+  .shots figcaption { margin-top: 16px; font-weight: 650; color: var(--ink-2); }
+  .shots figcaption small { display: block; color: var(--muted); font-weight: 450; font-size: 0.9rem; }
+  @media (max-width: 980px) { .shots { grid-template-columns: 1fr 1fr; gap: 30px 16px; } }
+
+  .drive { display: grid; gap: 48px; align-items: center; }
+  @media (min-width: 960px) { .drive { grid-template-columns: 1fr 1fr; gap: 80px; } }
+  .drive h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
+  .drive .lead { color: var(--muted); font-size: 1.15rem; margin: 18px 0 26px; }
+  .flow { background: linear-gradient(160deg, var(--navy-900), var(--navy-700)); color: #fff; border-radius: 28px; padding: 34px 28px; display: grid; gap: 14px; }
+  .flow-step { display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 14px 16px; }
+  .flow-step .n { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--green-500); color: var(--green-950); font-weight: 800; }
+  .flow-step b { display: block; }
+  .flow-step span { color: #bfcdf0; font-size: 0.92rem; }
+  .warn { margin-top: 22px; background: var(--amber-100); color: #7c4a03; border-radius: 14px; padding: 14px 16px; font-size: 0.95rem; }
+
+  .compat { max-width: 860px; margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .compat .box { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--shadow-sm); }
+  .compat h3 { font-size: 1.15rem; margin-bottom: 12px; }
+  .compat ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; color: var(--ink-2); font-size: 0.97rem; }
+  .compat li { display: flex; gap: 10px; align-items: flex-start; }
+  .compat li .ic { color: var(--green-600); margin-top: 4px; width: 1.1em; height: 1.1em; stroke-width: 2.6; }
+  .compat .soon .ic { color: var(--amber-600); }
+  @media (max-width: 720px) { .compat { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="announce">
+  <b>New</b> — Hira Pharmacy now runs on your Android phone. No computer needed. <a href="../">Looking for the Windows version?</a>
+</div>
+
+<header class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="../" aria-label="Hira Pharmacy home"><img src="../assets/logo.png" alt="" width="34" height="34"> Hira Pharmacy</a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="../">Windows</a>
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
+        <a href="#backup">Backup</a>
+        <a href="#install">Install</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn btn-primary" href="get/" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg><span class="dl-label">Download</span>
+        </a>
+        <button class="nav-toggle" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Sections (mobile)">
+      <a href="../">Windows version</a>
+      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
+      <a href="#backup">Backup</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="pill-beta"><b>Beta</b> Version 1.0.0 for Android</span>
+        <h1>Your whole pharmacy, <span class="grad">in your pocket.</span></h1>
+        <p class="lede">Billing, stock, expiry alerts, suppliers, udhaar and reports on your phone. It works without internet, and one tap saves a backup to your own Google Drive. You don't need a computer.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="get/" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg> Download for Android</a>
+          <a class="btn btn-ghost btn-lg" href="#install">How to install</a>
+        </div>
+        <p class="hero-meta"><strong>1.1 MB</strong> &middot; Android 7 or newer &middot; Works offline &middot; License key from us on WhatsApp</p>
+        <div class="hero-qr"><img src="../assets/qr-hira-mobile.png" width="96" height="96" alt="QR code: scan with your phone camera to download Hira Pharmacy for Android"><span>On a computer? Scan this with your phone camera to download.</span></div>
+      </div>
+      <div class="hero-phones" aria-hidden="false">
+        <div class="phone"><div class="phone-screen"><img src="../assets/mobile-dashboard.png" width="496" height="751" alt="Dashboard showing today's sales, profit, bills and udhaar on a phone"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="../assets/mobile-sales.png" width="496" height="751" alt="Sales screen with medicine search and cart on a phone"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">What you can do</div>
+      <h2>The same Hira, made for a small screen.</h2>
+      <p>It is built from the Hira Pharmacy that runs in shops today, so your daily work looks and behaves the same.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat reveal"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M3 4h2.5l2.2 11h10.6l2-8H6.5"/></svg></div><h3>Fast billing</h3><p>Search a medicine (or type a barcode), add to the cart, save the sale. Sell by the pack, strip or tablet.</p></article>
+      <article class="feat reveal"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/></svg></div><h3>Stock and expiry</h3><p>See what is low and what is about to expire. Add batches, prices and expiry dates for every medicine.</p></article>
+      <article class="feat reveal"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg></div><h3>Short List</h3><p>Medicines that are running out gather in one list, ready to order from your supplier.</p></article>
+      <article class="feat reveal"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M21 20v-2a4 4 0 0 0-3-3.9M16 3.2a3.5 3.5 0 0 1 0 6.6"/></svg></div><h3>Customers and udhaar</h3><p>Keep each customer's credit, take payments, and see who owes you at a glance.</p></article>
+      <article class="feat reveal"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Profit and reports</h3><p>Today's sales, profit after expenses, cash book and period reports, calculated for you.</p></article>
+      <article class="feat reveal"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><h3>Offline, always</h3><p>No internet is needed for daily work. Your data stays on your phone, so the shop never waits for a connection.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="screens">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">Screens</div>
+      <h2>Big buttons. Cards instead of wide tables.</h2>
+      <p>Menus sit at the bottom under your thumb. Long lists become simple cards, and every form opens full screen.</p>
+    </div>
+    <div class="shots">
+      <figure class="reveal"><div class="phone"><div class="phone-screen"><img src="../assets/mobile-dashboard.png" width="496" height="751" alt="Dashboard" loading="lazy"></div></div><figcaption>Dashboard<small>Today at a glance</small></figcaption></figure>
+      <figure class="reveal"><div class="phone"><div class="phone-screen"><img src="../assets/mobile-sales.png" width="496" height="751" alt="Sales" loading="lazy"></div></div><figcaption>Sales<small>Search, add, save</small></figcaption></figure>
+      <figure class="reveal"><div class="phone"><div class="phone-screen"><img src="../assets/mobile-stock.png" width="496" height="751" alt="Stock shown as cards" loading="lazy"></div></div><figcaption>Stock<small>One card per medicine</small></figcaption></figure>
+      <figure class="reveal"><div class="phone"><div class="phone-screen"><img src="../assets/mobile-backup.png" width="496" height="751" alt="Backup and restore screen" loading="lazy"></div></div><figcaption>Backup<small>Save to Google Drive</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="backup">
+  <div class="container">
+    <div class="drive">
+      <div class="reveal">
+        <div class="kicker">Backup</div>
+        <h2>Your data, saved in your own Google Drive.</h2>
+        <p class="lead">Tap Backup Now and choose Google Drive when your phone asks where to save. If you lose or change your phone, install Hira, tap Restore and pick the file from Drive. Everything comes back.</p>
+        <p class="lead" style="margin-top:-8px">The file is the same kind that Hira for Windows makes, so you can also move a shop between a computer and a phone.</p>
+        <div class="warn"><b>Please back up every week.</b> The data lives on your phone. If you uninstall the app or clear its data, it is gone unless you have a backup file.</div>
+      </div>
+      <div class="flow reveal">
+        <div class="flow-step"><span class="n">1</span><div><b>Open Backup</b><span>Tap Backup in the bottom menu.</span></div></div>
+        <div class="flow-step"><span class="n">2</span><div><b>Tap Backup Now</b><span>Your phone shows its Save screen.</span></div></div>
+        <div class="flow-step"><span class="n">3</span><div><b>Choose Google Drive</b><span>Pick a folder and tap Save. Done.</span></div></div>
+        <div class="flow-step"><span class="n">4</span><div><b>New phone? Tap Restore</b><span>Pick the file from Drive and your shop returns.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="status">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">Honest status</div>
+      <h2>What works today, and what is coming.</h2>
+      <p>This is a first release. We would rather tell you exactly where it stands.</p>
+    </div>
+    <div class="compat">
+      <div class="box reveal">
+        <h3>Works now</h3>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg> Billing, stock, purchases and returns</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg> Customers, suppliers, udhaar and cash book</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg> Expiry and low-stock alerts, Short List</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg> Dashboard, profit and reports on screen</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg> Backup and restore with Google Drive</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg> Works fully offline</li>
+        </ul>
+      </div>
+      <div class="box soon reveal">
+        <h3>Coming next</h3>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Hira Cloud backup and Hira Live on the phone</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Sharing a bill on WhatsApp and printing</li>
+          <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Exporting reports to Excel and PDF</li>
+        </ul>
+        <p style="margin-top:14px;color:var(--muted);font-size:0.93rem">Tell us on WhatsApp what you need first and we will build that first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="install">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">Install</div>
+      <h2>Ready in about two minutes.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Download the app</h3><p>On your Android phone, tap <b>Download for Android</b>. If you are on a computer, scan the code at the top of this page.</p></div>
+      <div class="step reveal"><h3>Allow the install</h3><p>Open the file. If Android asks, allow installing apps from this source (your browser). This is normal for apps that are not from the Play Store.</p></div>
+      <div class="step reveal"><h3>Set up your shop</h3><p>Open Hira, enter your shop details and start. Message us on WhatsApp with the Machine ID shown in the app to get your license key.</p></div>
+    </div>
+    <div class="steps-cta">
+      <a class="btn btn-primary btn-lg" href="get/" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg> Download for Android</a>
+      <a class="btn btn-outline btn-lg js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="kicker">FAQ</div>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Do I need a computer?</summary><p>No. You can set up your shop, sell, manage stock and take backups using only your phone. If you already use Hira for Windows, you can also move your data between the two with a backup file.</p></details>
+      <details><summary>Does it need the internet?</summary><p>No. Selling, stock and reports work offline. You only need a connection when you save or restore a backup with Google Drive.</p></details>
+      <details><summary>Where is my data stored?</summary><p>On your phone, inside the app. It is not sent to us. That is why a weekly Google Drive backup matters: clearing the app's data or uninstalling it removes the shop data.</p></details>
+      <details><summary>How do I get my data back on a new phone?</summary><p>Install Hira, open Backup, tap Restore and choose your backup file from Google Drive. Your medicines, customers and sales come back.</p></details>
+      <details><summary>Is it the same as Hira Live?</summary><p>No. Hira Live only shows a Windows shop on your phone. Hira Pharmacy for Android is the full app: you can sell and manage stock on it directly.</p></details>
+      <details><summary>Is it free? How do I get a license?</summary><p>The download is free. To use it in your shop, message us on WhatsApp with the Machine ID shown in the app and we will send your license key. Ask us on WhatsApp about phone licensing.</p></details>
+      <details><summary>It is a beta. What does that mean?</summary><p>It is the first release. We tested it on a computer that simulates a phone, but not yet on many real phones or in many shops. Please keep weekly backups and tell us on WhatsApp about anything that looks wrong; we fix quickly.</p></details>
+      <details><summary>Why does Android warn me when I install?</summary><p>The app is shared as a file instead of through the Play Store, so Android asks for your permission once. Only install apps from sources you trust.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <div class="final-inner">
+      <h2>Take the pharmacy with you.</h2>
+      <p>Install Hira Pharmacy on your phone and run the shop from anywhere.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="get/" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg> Download for Android</a>
+        <a class="btn btn-ghost btn-lg" href="../">Windows version</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../assets/logo.png" alt="" width="34" height="34" loading="lazy"> Hira Pharmacy</a>
+        <p>Offline pharmacy management software for Pakistan's pharmacies, on Windows and now on Android.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Phone app</h4>
+        <a href="#features">Features</a>
+        <a href="#backup">Backup</a>
+        <a href="#install">Install</a>
+      </div>
+      <div class="foot-col">
+        <h4>More</h4>
+        <a href="../">Windows version</a>
+        <a href="../trial/">Free 3-day trial</a>
+        <a href="../releases.html">Release notes</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a class="js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp 0310-9888092</a>
+        <a href="tel:+923109888092">Call 0310-9888092</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Hira Technologies · Android 1.0.0 beta</span>
+      <span>Made in Pakistan · Support on <a class="js-wa" href="https://wa.me/923109888092" target="_blank" rel="noopener">WhatsApp</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var waText = encodeURIComponent('Assalam o Alaikum, I installed Hira Pharmacy for Android and would like my license key.');
+  document.querySelectorAll('.js-wa').forEach(function (a) { a.href = 'https://wa.me/923109888092?text=' + waText; });
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+  var toggle = document.getElementById('nav-toggle');
+  var menu = document.getElementById('nav-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
